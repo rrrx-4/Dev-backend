@@ -23,7 +23,7 @@ app.use(
 
 
 mongoose.connect(
-  "mongodb+srv://krahul:One2345678@9@cluster0.agghb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  process.env.mongoURI,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
