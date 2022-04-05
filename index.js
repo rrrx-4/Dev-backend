@@ -22,7 +22,7 @@ app.use(
 
 
 mongoose.connect(
-  process.env.mongoURI ,
+  "mongodb+srv://krahul:One2345678@9@cluster0.agghb.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -34,12 +34,16 @@ mongoose.connect(
   }
 );
 
-
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
 // middleware
 app.use(morgan("dev"));
 
 // connect db
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 

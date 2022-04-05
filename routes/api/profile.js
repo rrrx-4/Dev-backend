@@ -303,8 +303,8 @@ router.get("/github/:username", (req, res) => {
     const options = {
       uri: `https://api.github.com/users/${req.params.username
         }/repos?per_page=5&
-      sort=created:asc&client_id=${process.env.githubclient_id}
-      & client_secret=${process.env.githubsecret} `,
+      sort=created:asc&client_id=${f527f27228890d4e6359}
+      & client_secret=${"831345a9d7f9677ad9250ffe20112324a1c50870"} `,
       method: "GET",
       headers: { "user-agent": "nodejs" },
     };
